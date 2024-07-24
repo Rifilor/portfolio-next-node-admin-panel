@@ -1,0 +1,134 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin square-block($size: 50px, $border-radius: 0px, $overflow: visible, $bgc: transparent) {
+    width: $size;
+    height: $size;
+    border-radius: $border-radius;
+    overflow: $overflow;
+}
+
+@mixin font($fz, $lh: 115%) {
+    font-size: $fz;
+    line-height: $lh;
+}
+
+@mixin firstLaterUpercase {
+    &::first-letter {
+        text-transform: capitalize;
+    }
+}
+
+@mixin overflowDots {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin button-style($w: max-content, $h: 40px) {
+    @include flex-center;
+    width: $w;
+    height: $h;
+    border-radius: 8px;
+    border: 2px solid var(--color-gray-text);
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 600;
+    padding: 0 10px;
+    color: var(--color-gray-text);
+    transition: .1s linear;
+    &:hover {
+        color: var(--color-dark);
+        border-color: var(--color-dark);
+    }
+    &:active {
+        transition: 0s;
+
+        background-color: var(--color-white);
+    }
+}
+@mixin button-style-red($w: max-content, $h: 40px) {
+    text-transform: capitalize;
+    @include flex-center;
+    width: $w;
+    height: $h;
+    border-radius: 8px;
+    border: 2px solid var(--color-gray-red);
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 600;
+    padding: 0 10px;
+    color: var(--color-gray-red);
+    transition: .1s linear;
+    &:hover {
+        color: var(--color-red);
+        border-color: var(--color-red);
+    }
+    &:active {
+        transition: 0s;
+        color: var(--color-dark);
+        border-color: var(--color-dark);
+    }
+}
+
+@mixin button-text-gray($fz: 16px) {
+    svg {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+    }
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: $fz;
+    line-height: 120%;
+    font-weight: 600;
+    color: var(--color-gray-text);
+    transition: .1s linear;
+    &:hover {
+        color: var(--color-dark);
+    }
+}
+
+@mixin button-text-gray-red($fz: 16px) {
+    text-transform: capitalize;
+    font-size: $fz;
+    line-height: 120%;
+    font-weight: 600;
+    color: var(--color-gray-red);
+    transition: .1s linear;
+    &:hover {
+        color: var(--color-dark);
+    }
+}
+
+@mixin input-search {
+    background-image: url('https://www.svgrepo.com/show/7109/search.svg');
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 37px;
+}
+
+@mixin default-settings-page {
+    @include flex-column;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color:var(--color-body);
+}
