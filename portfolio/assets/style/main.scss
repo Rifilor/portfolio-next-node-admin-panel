@@ -18,10 +18,10 @@ body {
     scrollbar-color: #F3F5F8 #fff;
 }
 .title-page {
-    @include firstLaterUpercase;
     font-size: 32px;
     color: var(--color-dark);
     font-weight: 600;
+    @include firstLaterUpercase;
 }
 input, select, textarea {
   font-size: 14px;
